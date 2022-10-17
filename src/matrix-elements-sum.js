@@ -27,10 +27,10 @@ const { NotImplementedError } = require('../extensions/index.js');
   function getMatrixElementsSum(matrix) {
     let sum = 0;
     
-      for (let i = 0; i < matrix.length; i++) {
+      for (let i = 0; i < matrix[0].length; i++) {
         // let a = matrix[i];
         sum = matrix[0].reduce(function(a,b){return(a+b)});
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
           
           if (matrix[i][j] !== 0) {
             sum = sum + matrix[i + 1][j];
@@ -42,8 +42,8 @@ const { NotImplementedError } = require('../extensions/index.js');
       }
     }
 
-// console.log(getMatrixElementsSum(matrix));
+console.log(getMatrixElementsSum(matrix));
 
-module.exports = {
-  getMatrixElementsSum
-};
+// module.exports = {
+//   getMatrixElementsSum
+// };
