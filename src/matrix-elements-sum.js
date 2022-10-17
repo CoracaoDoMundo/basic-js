@@ -42,8 +42,8 @@ const { NotImplementedError } = require('../extensions/index.js');
       }
     }
 
-console.log(getMatrixElementsSum(matrix));
+// console.log(getMatrixElementsSum(matrix));
 
-// module.exports = {
-//   getMatrixElementsSum
-// };
+module.exports = {
+  getMatrixElementsSum
+};

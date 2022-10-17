@@ -13,7 +13,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 
-let arr = [1, 2, 3, [4, 5]];
+// let arr = [1, 2, 3, [4, 5]];
 
 class DepthCalculator {
 
@@ -36,8 +36,8 @@ class DepthCalculator {
   }
 }
 
-console.log();
+// console.log();
 
-// module.exports = {
-//   DepthCalculator,
-// };
+module.exports = {
+  DepthCalculator,
+};
