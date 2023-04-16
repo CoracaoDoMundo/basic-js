@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Given matrix, a rectangular matrix of integers,
@@ -8,7 +8,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * @return {Number}
  *
  * @example
- * 
+ *
  * matrix = [
  *  [0, 1, 1, 2],
  *  [0, 5, 0, 0],
@@ -18,32 +18,64 @@ const { NotImplementedError } = require('../extensions/index.js');
  * The result should be 9
  */
 
- matrix = [
-      [1, 1, 1],
-      [2, 2, 2],
-      [3, 3, 3],
-    ];
-  
-  function getMatrixElementsSum(matrix) {
-    let sum = 0;
-    
-      for (let i = 0; i < matrix[0].length; i++) {
-        // let a = matrix[i];
-        sum = matrix[0].reduce(function(a,b){return(a+b)});
-        for (let j = 0; j < matrix.length; j++) {
-          
-          if (matrix[i][j] !== 0) {
-            sum = sum + matrix[i + 1][j];
-          } else {
-            sum = sum + 0;
-          }
-        }
-        return sum;
+// matrix = [
+//   [1, 0, 1],
+//   [2, 2, 0],
+//   [3, 3, 3],
+// ];
+
+function getMatrixElementsSum(matrix) {
+  let sum = 0;
+
+  let col_len = matrix.length;
+  var row_len = matrix[0].length;
+
+  for (let i = 0; i < row_len; i++) {
+    for (let j = 0; j < col_len; j++) {
+      if (matrix[j][i] === 0) {
+        matrix[j + 1][i] = 0;
+        console.log(matrix);
+      } else {
+        console.log(matrix[j][i]);
       }
+      sum = sum + matrix[j][i];
+      // } else {
     }
+  }
+  // for (let i = 0; i < matrix.length; i++) {
+  //   let width = matrix[i].length;
+  //   for (let j = 0; j < width; j++) {
+  //     sum = sum + matrix[i][j];
 
-console.log(getMatrixElementsSum(matrix));
+  //     if (matrix[i][j] === 0) {
+  //       if (i !== 0) {
+  //         sum = sum - matrix[i + 1][j];
+  //       }
+  //     }
+  //   }
+  // }
+  // return sum;
+  // for (let i = 0; i < matrix.length; i++) {
+  //   for (let j = 0; j < matrix[0].length; j++) {
+  //     // console.log(sum);
+  //     if (matrix[j][i] !== 0) {
+  //       sum = sum + (matrix[j][i]);
+  //       // for (let k = 0; k < matrix[j].length - j; k++) {
+  //       //   // console.log(k);
+  //       //   sum = sum - (matrix[k][i]);
+  //       //   console.log(sum);
+  //       // }
+  //     } else {
+  //       console.log(j);
+  //       i++;
+  //     }
+  //   }
+  // }
+  return sum;
+}
 
-// module.exports = {
-//   getMatrixElementsSum
-// };
+// console.log(getMatrixElementsSum(matrix));
+
+module.exports = {
+  getMatrixElementsSum,
+};
